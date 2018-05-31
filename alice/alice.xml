@@ -20,8 +20,8 @@
 	
 	<input pattern="*консул*">
 	
-		<var name="version" value="1.0"/>
-		<output value='{"text":"Нажмите для звонка","tts":"Нажмите для звонка""end_session":false,"buttons":[{"title": "Получить Консультацию Сейчас", "payload": "", "url": "89602440612", "hide": true}]}' />
+		<output value='{"text":"Пока!","end_session":false,"buttons":[]}'/>
+		
 		
 	</input>
 
