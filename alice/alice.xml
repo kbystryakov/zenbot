@@ -1,8 +1,6 @@
 <context>
 
-	<input pattern="*">
-        	<output value="Мастер Слушает Ваш Приказ:" />
-	</input>
+	
     
     <sample>
         <item value="Вызвать Мастера"/>
