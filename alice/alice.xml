@@ -14,7 +14,7 @@
 	
 		<output value="Мастер готов выехать к Вам.     Укажите, пожалуйста, номер телефона для связи"/>
 				
-		<context id="phone-number">
+		<context id="phone-number" if="empty($Phone)">
 		
 			<input pattern="$Text">
                			<var name="Phone" value="$Text" scope="user"/>
