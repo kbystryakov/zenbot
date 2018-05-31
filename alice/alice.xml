@@ -18,6 +18,7 @@
 		
 			<input pattern="$Text">
                			<var name="Phone" value="$Text" scope="user"/>
+				<var name="end_session" value="javascript: true"/>
              		   	<output value="Спасибо!   Мастер сейчас Вам перезвонит на номер $Phone"/>
 	        
          		</input>
