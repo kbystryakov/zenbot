@@ -20,7 +20,7 @@
 	
 	<input pattern="*консул*">
 	
-		<output value='{"text":"Нажми для связи с Мастером!","end_session":false,"buttons":[{"title": "Получить Консультацию Сейчас", "payload": "", "url": "tel:89602440612", "hide": true}]}'/>
+		<output value='{"text":"Нажми для связи с Мастером!","end_session":false,"buttons":[{"title": "Получить Консультацию Сейчас", "payload": "", "url": "https://ecoprint.spb.ru/call/", "hide": true}]}'/>
 		
 		
 	</input>
