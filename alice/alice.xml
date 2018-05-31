@@ -1,14 +1,8 @@
 <context>
 
 	<input pattern="*">
-        	<output>
-			<item>
-				<![CDATA[
-      				<h3>Готов Чинить</h3>
-      				<a href="https://ecoprint.spb.ru/order/">Приказывайте!</a>
-    				]]>
-			</item>
-		</output>
+        	<output value="Починим Ваш Принтер,"/>
+		<output value="Приказывайте"/>
 	</input>
     
     <sample>
@@ -19,15 +13,17 @@
 
 	<input pattern="* вызвать мастера *">
 	
-		<output value="Мастер готов выехать к Вам, укажите, пожалуйста, номер телефона для связи"/>
+		<output value="Мастер готов выехать к Вам"/>
+		<output value="Укажите, пожалуйста, номер телефона для связи"/>
 		
 		<context id="phone-number">
 		
 			<input pattern="$Text">
-                <var name="Phone" value="$Text" scope="user"/>
-                <output value="Спасибо, мастер сейчас Вам перезвонит на номер $Phone"/>
+               			<var name="Phone" value="$Text" scope="user"/>
+             		   	<output value="Спасибо!"/>
+				<output value="Мастер сейчас Вам перезвонит на номер $Phone"/>
                 <context/>
-            </input>
+         </input>
 			
 		</context>
 		
