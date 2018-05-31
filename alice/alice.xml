@@ -16,6 +16,10 @@
 			<input pattern="$Text">
         			<var name="phone" value="$Text" scope="user"/>
         			<output value="Оформляю вызов мастера на номер $phone"/>
+				<get url="https://ecoprint.spb.ru/wp-content/alisa-repair-printer.php" var="hook_result">
+    		<param name="submit" value="1"/>
+    		<param name="phone" value="$phone"/>
+    		</get>
         			<context/>
       			</input>
 		</context>
