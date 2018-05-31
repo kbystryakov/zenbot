@@ -1,5 +1,11 @@
 <context>
 
+	<input pattern="*">
+        	<output>
+			<item>Готов Чинить </item>
+			<item>Приказывайте! </item>
+		</output>
+	</input>
     
     <sample>
         <item value="Вызвать Мастера"/>
