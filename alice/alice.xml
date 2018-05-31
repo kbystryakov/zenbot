@@ -10,17 +10,20 @@
         <item value="Цены"/>
     </sample>
 
-	<input pattern="(*выз*)|(*мас*)">
+	<input id="order" pattern="*выз*">
+		<context id="phone_is_empty" if="empty($phone)">
+      			<output value="На какой номер заказать мастера?"/>
+			      <input pattern="$Text">
+        			<var name="phone" value="$Text" scope="user"/>
+        			<output value="Оформляю вызов мастера на номер $phone"/>
+        			<context/>
+      				</input>
+		</context>
+
+    	</input>
 	
-		<output value='{"text":"Нажми для Вызова Мастера!","end_session":false,"buttons":[{"title": "Вызвать Мастера для Ремонта Принтера", "payload": "", "url": "https://ecoprint.spb.ru/order/", "hide": true}]}'/>
-		<get url="https://ecoprint.spb.ru/wp-content/alisa-repair-printer.php" var="hook_result">
-    		<param name="submit" value="1"/>
-    		<param name="phone" value="На этот номер вызвать мастера"/>
-    		</get>
-			
-	</input>
 	
-	<input pattern="*цен*">
+      	<input pattern="*цен*">
 	
 		<output value="Ремонт принтера = 1990 руб,   Выезд мастера при отказе от ремона = 569 руб,  Диагностика =  Бесплатно"/>
 			
