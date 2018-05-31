@@ -8,22 +8,7 @@
         <item value="Посмотреть Цены"/>
     </sample>
 
-	<input pattern="*(выз*|мастер*)*">
 	
-		<output value="Мастер готов выехать к Вам.     Укажите, пожалуйста, номер телефона для связи"/>
-				
-		<context id="phone-number" if="empty($Phone)">
-		
-			<input pattern="$Text">
-               			<var name="Phone" value="$Text" scope="user"/>
-				<var name="end_session" value="javascript: true"/>
-             		   	<output value="Спасибо!   Мастер сейчас Вам перезвонит на номер $Phone"/>
-	        
-         		</input>
-			
-		</context>
-		
-	</input>
 	
 	<input pattern="*(посм*|цен*)*">
 	
