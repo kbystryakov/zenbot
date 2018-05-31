@@ -5,7 +5,7 @@
 	</input>
     
     <sample>
-        <item value="Вызвать Мастера"/>
+        <item value="Вызвать_Мастера"/>
         <item value="Консультация"/>
         <item value="Цены"/>
     </sample>
