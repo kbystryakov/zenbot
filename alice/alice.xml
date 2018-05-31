@@ -1,8 +1,13 @@
 <context>
 
 	<input pattern="*">
-        	<output value="Починим Ваш Принтер,"/>
-		<output value="Приказывайте"/>
+        	<output>
+			<item><![CDATA[
+Мастер готов ремонтировать принтер
+Приказывайте
+]]>
+			</item>
+		</output>
 	</input>
     
     <sample>
