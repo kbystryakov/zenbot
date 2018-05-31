@@ -1,63 +1,44 @@
 <context>
 
     <input pattern="*">
-        <output value="Бот запущен"/>
+        <output value="Готов Чинить\nПриказывайте!"/>
     </input>
     
     <sample>
-        <item value="Кто такая Алиса"/>
-        <item value="Что такое бот"/>
+        <item value="Вызвать Мастера"/>
+        <item value="Получить Консультацию"/>
+        <item value="Посмотреть Цены"/>
     </sample>
 
-    <input pattern="* (привет*|здравствуй*) *">
-        <output if="full($UserName)">
-            <item value="Привет, $UserName! Рада снова видеть тебя!"/>
-            <item value="Здравствуй, $UserName! Я уже успела соскучиться..."/>
-        </output>
-
-        <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! А это - демонстрация моего навыка, созданного с помощью платформы zenbot. Как тебя зовут?"/>
-
-            <input pattern="$Text">
-                <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+	<input pattern="* вызвать мастера *">
+	
+		<output value="Мастер готов выехать к Вам, укажите, пожалуйста, номер телефона для связи"/>
+		
+		<context id="phone-number">
+		
+			<input pattern="$Text">
+                <var name="Phone" value="$Text" scope="user"/>
+                <output value="Спасибо, мастер сейчас Вам перезвонит на номер $Phone"/>
                 <context/>
             </input>
-        </context>
-    </input>
-
-    <input pattern="* пока *">
-        <var name="end_session" value="javascript: true"/>
-        <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
-    </input>
-
-    <input pattern="[* (кто|что) так*] $Text">
-        <context id="name" if="empty($UserName)"/>
-
-        <context id="wiki" if="full($UserName)">
-            <get url="http://ru.wikipedia.org/w/api.php" var="Wiki">
-                <param name="format" value="xml"/>
-                <param name="action" value="opensearch"/>
-                <param name="search" value="$Text"/>
-            </get>
-
-            <var name="Items" value="javascript: $Wiki['SearchSuggestion']['Section']['Item']" if="full($Wiki)" scope="context"/>
-            <var name="Result" value="javascript: $Items[Math.floor(Math.random() * $Items.length)]['Description']['content']" if="full($Items)"/>
-
-            <output if="empty($Result)">
-                <item value='Я поискала в википедии, но ничего не нашла по запросу "$Text"'/>
-                <item value="В википедии ничего не нашлось..."/>
-            </output>
-
-            <output value="$Result" if="full($Result)"/>
-
-            <input pattern="* (еще|другой вариант) *"/>
-
-            <sample value="Другой вариант"/>
-        </context>
-
-
-    </input>
+			
+		</context>
+		
+	</input>
+	
+	<input pattern="* посмотреть цены *">
+	
+		<output>
+			<item>Ремонт принтера = 1990 руб</item>
+			<item>Выезд мастера при отказе от ремона = 569 руб</item>
+			<item>Диагностика =  0 руб</item>
+		</output>
+	</input>
+	
+	<input pattern="* получить консультацию *">
+	
+		<output value='{"text":"Нажмите для звонка","tts":"Нажмите для звонка""end_session":false,"buttons":[{"title": "Получить Консультацию Сейчас", "payload": "", "url": "tel:89602440612", "hide": true}]}' />
+		
+	</input>
 
 </context>
