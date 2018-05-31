@@ -10,14 +10,14 @@
         <item value="Цены"/>
     </sample>
 
-	<input id="order" pattern="*выз*">
-		<context id="phone_is_empty" if="empty($phone)">
+	<input id="order" pattern="выз*">
+		<context id="get_phone">
       			<output value="На какой номер заказать мастера?"/>
-			      <input pattern="$Text">
+			<input pattern="$Text">
         			<var name="phone" value="$Text" scope="user"/>
         			<output value="Оформляю вызов мастера на номер $phone"/>
         			<context/>
-      				</input>
+      			</input>
 		</context>
 
     	</input>
