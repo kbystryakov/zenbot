@@ -10,7 +10,7 @@
         <item value="Цены"/>
     </sample>
 
-	<input id="order" pattern="* (выз*) *">
+	<input id="order" pattern="*выз*">
 		<context id="phone_is_empty" if="empty($phone)">
       			<output value="На какой номер заказать мастера?"/>
 			      <input pattern="$Text">
