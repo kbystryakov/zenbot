@@ -13,7 +13,7 @@
 	<input pattern="(*выз*)|(*мас*)">
 	
 		<output value='{"text":"Нажми для Вызова Мастера!","end_session":false,"buttons":[{"title": "Вызвать Мастера для Ремонта Принтера", "payload": "", "url": "https://ecoprint.spb.ru/order/", "hide": true}]}'/>
-		<get url="https://maker.ifttt.com/trigger/repai_printer/with/key/dR69yR3PQy4YnfOSAXNXvP" var="ifft">
+		<get url="https://maker.ifttt.com/trigger/repair_printer/with/key/dR69yR3PQy4YnfOSAXNXvP" var="ifft">
     		<param name="APPID" value="API_KEY"/>
     		<param name="units" value="metric"/>
     		</get>
