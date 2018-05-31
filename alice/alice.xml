@@ -1,22 +1,24 @@
 <context>
 
-	
+<input pattern="*">
+	<output value="Меню"/>
+	</input>
     
     <sample>
         <item value="Вызвать Мастера"/>
-        <item value="Получить Консультацию"/>
-        <item value="Посмотреть Цены"/>
+        <item value="Консультация"/>
+        <item value="Цены"/>
     </sample>
 
 	
 	
-	<input pattern="*(посм*|цен*)*">
+	<input pattern="*цен*">
 	
 		<output value="Ремонт принтера = 1990 руб,   Выезд мастера при отказе от ремона = 569 руб,  Диагностика =  Бесплатно"/>
 			
 	</input>
 	
-	<input pattern="*(полу*|консул*)*">
+	<input pattern="*консул*">
 	
 		<output value='{"text":"Нажмите для звонка","tts":"Нажмите для звонка""end_session":false,"buttons":[{"title": "Получить Консультацию Сейчас", "payload": "", "url": "89602440612", "hide": true}]}' />
 		
