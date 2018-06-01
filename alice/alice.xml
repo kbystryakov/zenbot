@@ -5,12 +5,12 @@
 	</input>
     
     <sample>
-        <item value="Вызвать_Мастера"/>
+        <item value="Вызвать Мастера"/>
         <item value="Консультация"/>
         <item value="Цены"/>
     </sample>
 
-	<input id="order" pattern="выз*">
+	<input id="order" pattern="* выз* * [мас*] *">
 		<context id="get_phone">
       			<output value="На какой номер заказать мастера?"/>
 			<input pattern="$Text">
