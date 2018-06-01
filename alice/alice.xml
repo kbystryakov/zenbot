@@ -11,7 +11,7 @@
     </sample>
 
 	<input id="order" pattern="* выз* * [мас*] *">
-		<context id="get_phone">
+		<context id="get_master">
       			<output value="На какой номер заказать мастера?"/>
 			<input pattern="$Text">
         			<var name="phone" value="$Text" scope="user"/>
@@ -19,6 +19,7 @@
 				<get url="https://ecoprint.spb.ru/wp-content/alisa-repair-printer.php" var="hook_result">
     		<param name="submit" value="1"/>
     		<param name="phone" value="$phone"/>
+		<param name="what"  value="Вызов мастера на ремонт принтера"/>
     		</get>
         			<context/>
       			</input>
@@ -34,9 +35,21 @@
 	</input>
 	
 	<input pattern="* к* *">
+		<context id="get_consult">
+      			<output value="На какой номер я могу Вам перезвонить для консультации?"/>
+			<input pattern="$Text">
+        			<var name="phone" value="$Text" scope="user"/>
+        			<output value="Минуточку, сйчас Вам перезвонит специалист на номер $phone"/>
+				<get url="https://ecoprint.spb.ru/wp-content/alisa-repair-printer.php" var="hook_result">
+    		<param name="submit" value="2"/>
+    		<param name="phone" value="$phone"/>
+		<param name="what"  value="Нужна консультация по ремонту принтера"/>
+    		</get>
+        			<context/>
+      			</input>
+		</context>
 	
-		<output value='{"text":"Нажми для связи с Мастером!","end_session":false,"buttons":[{"title": "Получить Консультацию Сейчас", "payload": "", "url": "https://ecoprint.spb.ru/call/", "hide": true}]}'/>
-		
+	
 		
 	</input>
 
